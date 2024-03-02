@@ -69,3 +69,10 @@ WHERE
     rank_asc <= 10 OR rank_desc <= 10
 ORDER BY
     score DESC, rank_asc;
+
+--A metodologia de pontuação permite uma análise multifacetada do comportamento dos clientes em relação aos seus empréstimos. 
+--Considerando fatores como inadimplência, confiabilidade de pagamento, recorrência de empréstimos, e comportamentos de pagamento parcial, 
+--o script oferece uma visão abrangente da base de clientes, destacando aqueles com melhor e pior desempenho financeiro.
+
+--elhores clientes são aqueles que consistentemente pagam a tempo, não têm histórico de default, possivelmente são clientes recorrentes, e têm maior volume de empréstimos, refletindo maior confiança e valor para a instituição.
+--Piores clientes apresentam riscos mais elevados, como evidenciado por inadimplência, pagamentos parciais, ou montantes significativos não pagos.

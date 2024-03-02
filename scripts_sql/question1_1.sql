@@ -10,3 +10,7 @@ ORDER BY
     total_loans DESC
 LIMIT
     1;
+
+-- utilizado para analisar dados de empréstimos em um banco de dados, especificamente para encontrar o mês com o maior número de empréstimos emitidos, 
+-- considerando tanto a contagem de empréstimos quanto o montante total emprestado.
+-- pode ser útil para análises financeiras, avaliações de desempenho de produtos de empréstimo, planejamento de recursos e estratégias de marketing, entre outros. 

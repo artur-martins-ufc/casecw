@@ -15,3 +15,6 @@ ORDER BY
 	month_year ASC,  -- Primeiro por mês de forma ascendente
 	taxa_inadimplencia DESC,
     c.batch ASC;     -- Depois por lote de forma ascendente
+
+-- Este script SQL é projetado para analisar a performance dos empréstimos, especificamente observando a quantidade de empréstimos emitidos, 
+-- o número de empréstimos inadimplentes, e a taxa de inadimplência, agrupados por mês e por batch (lote) de clientes.

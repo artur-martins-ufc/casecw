@@ -1,7 +1,9 @@
+
+-- Calcula métricas-chave para cada cliente com base nos dados de empréstimos
 WITH client_scores AS (
     SELECT
         l.user_id,
-        AVG(l.amount_paid / l.due_amount) AS avg_payment_reliability,
+        AVG(l.amount_paid / l.due_amount) AS avg_payment_reliability, -- Calcula a confiabilidade média de pagamento de cada cliente como a média da razão entre o montante pago e o montante devido.
         BOOL_OR(l.status = 'default') AS any_default,
         SUM(l.loan_amount) AS total_loan_amount
     FROM
@@ -9,6 +11,7 @@ WITH client_scores AS (
     GROUP BY
         l.user_id
 ),
+-- Utiliza os dados calculados no CTE client_scores para classificar os clientes
 ranked_clients AS (
     SELECT
         cs.user_id,
@@ -48,3 +51,5 @@ SELECT * FROM top_clients
 UNION ALL
 SELECT * FROM bottom_clients
 ORDER BY category DESC, avg_payment_reliability DESC, any_default, total_loan_amount DESC;
+
+--  identificando aqueles com melhor e pior desempenho em termos de pagamento de empréstimos.
